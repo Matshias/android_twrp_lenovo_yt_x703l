@@ -20,9 +20,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from device.mk
 $(call inherit-product, device/lenovo/yt_x703l/device.mk)
 
+# Time Zone data for recovery
+PRODUCT_COPY_FILES += \
+	bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+
 # Device identifier. This must come after all inclusions
 PRODUCT_NAME := full_yt_x703l
 PRODUCT_DEVICE := yt_x703l
 PRODUCT_BRAND := Lenovo
 PRODUCT_MANUFACTURER := Lenovo
-PRODUCT_MODEL := Yoga Tablet 3 Plus LTE
+PRODUCT_MODEL := Yoga Tablet 3 Plus
